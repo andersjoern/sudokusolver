@@ -1,0 +1,180 @@
+
+use fltk::{app::*, button::*, window::*, input::*, dialog::*};
+
+fn solvable(grid: &[[i32; 9]; 9]) -> bool {
+    let mut items  = vec![0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for row in grid {
+        for v in items.iter_mut() {*v = 0;}
+        for &value in row {
+            if value > 0 && value < 10 {
+                items[(value - 1) as usize] += 1;
+            }
+        }
+        if items.iter().any(|&n| n > 1) {
+            return false;
+        }
+    }
+
+    for i in 0..9 {
+        for v in items.iter_mut() {*v = 0;}
+        for row in grid {
+            if row[i] > 0 && row[i] < 10 {
+                items[(row[i] - 1) as usize] += 1;
+            }
+        }
+        if items.iter().any(|&n| n > 1) {
+            return false;
+        }
+    }
+
+    for &x in [0, 3, 6].iter() {
+        for &y in [0, 3, 6].iter() {
+            for v in items.iter_mut() {*v = 0;}
+            for i in 0..3 {
+                for j in 0..3 {
+                    if grid[y + i][x + j] > 0 && grid[y + i][x + j]  < 10 {
+                        items[(grid[y + i][x + j] - 1) as usize] += 1;
+                    }
+                }
+            }
+            if items.iter().any(|&n| n > 1) {
+                return false;
+            }
+        }
+    }
+
+    true
+}
+
+fn possible(grid: &[[i32; 9]; 9], y: usize, x: usize, number: i32) -> bool {
+    
+    if grid[y].iter().any(|&n| n == number) {
+        return false;
+    }
+    
+    if grid.iter().any(|n| n[x] == number) {
+        return false;
+    }
+        
+    let x0: usize = (x / 3) * 3;
+    let y0: usize = (y / 3) * 3;
+
+    for i in 0..3 {
+        for j in 0..3 {
+            if grid[y0 + i][x0 + j] == number {
+                return false;
+            }
+        }
+    }
+    true
+}
+
+fn find_next_cell2fill(grid: &[[i32; 9]; 9]) -> (usize, usize) {
+    for (x, row) in grid.iter().enumerate() {
+        for (y, &val) in row.iter().enumerate() {
+            if val == 0 {
+                return (x, y);
+            }
+        }
+    }
+    (99, 99)
+}
+
+fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
+
+    let (i, j) = find_next_cell2fill(&grid);
+    if i == 99 {
+        return true;
+    }
+    for e in 1..10 {
+        if possible(&grid, i, j, e) {
+            grid[i][j] = e;
+            if solve(grid) {
+                return true;
+            }
+            grid[i][j] = 0;
+        }
+    }
+    false
+}
+
+fn print_grid(grid : &[[i32; 9]; 9]) {
+    println!();
+    for row in grid {
+        for item in row {
+            print!("{} ", item);
+        }
+        println!();
+    } 
+    println!();
+}
+
+#[allow(clippy::redundant_clone)]
+fn main() {
+    let mut grid  = [[0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0]];
+
+    let positions = vec![10, 40, 70, 104, 134, 164, 198, 228, 258];
+    let mut input_fields: Vec<Input> = Vec::new();
+
+    let app = App::default().with_scheme(AppScheme::Gtk);
+    let mut wind = Window::default()
+        .with_size(300, 380)
+        .center_screen()
+        .with_label("Sudoku solver");
+    for &row in positions.iter() {
+        for &column in positions.iter() {
+            input_fields.push(Input::new(column, row, 30, 30, ""));
+        }
+    }
+    let mut button_solve = Button::new(60, 310, 80, 40, "Solve");
+    let mut button_clear = Button::new(150, 310, 80, 40, "Clear");
+    wind.end();
+    wind.show();
+    let mut work_fields = input_fields.clone();
+    button_solve.set_callback(Box::new(move || {
+            // Move data from screen to grid
+            let mut r = 0;            
+            for (idx, field) in work_fields.iter().enumerate() {
+                let c = idx % 9;
+                if idx > 0 && c == 0 { r += 1; }
+                grid[r][c] = match field.value().trim().parse() {
+                    Ok(n) => n,
+                    Err(_) => 0,
+                };
+            }
+            if solvable(&grid) {
+                solve(&mut grid);
+                // Move data from grid to screen
+                r = 0;
+                for (idx, field) in work_fields.iter().enumerate() {
+                    let c = idx % 9;
+                    if idx > 0 && c == 0 { r += 1; }
+                    if grid[r][c] == 0 {
+                        message(100, 100, "Not solvable");        
+                        break
+                    };
+                    let b = format!("  {}", grid[r][c]);
+                    field.set_value(&b);
+                }
+                print_grid(&grid);
+            } else {
+                message(100, 100, "Not solvable");
+            }
+        }));
+    work_fields = input_fields.clone();
+    button_clear.set_callback(Box::new(move || {
+        for field in work_fields.iter() {
+            field.set_value("");
+        }
+    }));
+    app.run().unwrap();
+}
