@@ -97,29 +97,8 @@ fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
     false
 }
 
-fn print_grid(grid : &[[i32; 9]; 9]) {
-    println!();
-    for row in grid {
-        for item in row {
-            print!("{} ", item);
-        }
-        println!();
-    } 
-    println!();
-}
-
 #[allow(clippy::redundant_clone)]
 fn main() {
-    let mut grid  = [[0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0]];
-
     let positions = vec![10, 40, 70, 104, 134, 164, 198, 228, 258];
     let mut input_fields: Vec<Input> = Vec::new();
 
@@ -139,6 +118,7 @@ fn main() {
     wind.show();
     let mut work_fields = input_fields.clone();
     button_solve.set_callback(Box::new(move || {
+            let mut grid = [[0; 9]; 9];
             // Move data from screen to grid
             let mut r = 0;            
             for (idx, field) in work_fields.iter().enumerate() {
@@ -163,7 +143,6 @@ fn main() {
                     let b = format!("  {}", grid[r][c]);
                     field.set_value(&b);
                 }
-                print_grid(&grid);
             } else {
                 message(100, 100, "Not solvable");
             }
