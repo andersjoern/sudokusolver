@@ -43,7 +43,6 @@ fn solvable(grid: &[[i32; 9]; 9]) -> bool {
             }
         }
     }
-
     true
 }
 
