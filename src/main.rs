@@ -2,10 +2,10 @@
 use fltk::{app::*, button::*, window::*, input::*, dialog::*};
 
 fn solvable(grid: &[[i32; 9]; 9]) -> bool {
-    let mut items  = vec![0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let mut items: [i32; 9];
 
     for row in grid {
-        for v in items.iter_mut() {*v = 0;}
+        items = [0; 9];
         for &value in row {
             if value > 0 && value < 10 {
                 items[(value - 1) as usize] += 1;
@@ -17,7 +17,7 @@ fn solvable(grid: &[[i32; 9]; 9]) -> bool {
     }
 
     for i in 0..9 {
-        for v in items.iter_mut() {*v = 0;}
+        items = [0; 9];
         for row in grid {
             if row[i] > 0 && row[i] < 10 {
                 items[(row[i] - 1) as usize] += 1;
@@ -30,7 +30,7 @@ fn solvable(grid: &[[i32; 9]; 9]) -> bool {
 
     for &x in [0, 3, 6].iter() {
         for &y in [0, 3, 6].iter() {
-            for v in items.iter_mut() {*v = 0;}
+            items = [0; 9];
             for i in 0..3 {
                 for j in 0..3 {
                     if grid[y + i][x + j] > 0 && grid[y + i][x + j]  < 10 {
