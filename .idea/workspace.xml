@@ -6,6 +6,15 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
@@ -13,9 +22,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b6db798-e2a4-4f5c-9027-e69392f256bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+    <list default="true" id="d81b1327-0a00-45ca-a781-d56db10b3f2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,28 +37,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="0jks52f2" />
+    <option name="directoryName" value="qyqow6mo" />
   </component>
-  <component name="ProjectId" id="1f0SFm2qrJ2HT1C6bPdZJOzFQkD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1gYiRLKItrnOSnys25YGWwugEwj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="language.rust" />
   </component>
   <component name="RunManager">
-    <configuration name="Run sudoku" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
       <option name="channel" value="DEFAULT" />
-      <option name="command" value="run --package sudokusolver --bin sudokusolver" />
+      <option name="command" value="run" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
@@ -57,27 +62,19 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Cargo Command.Run sudoku" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
     <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4b6db798-e2a4-4f5c-9027-e69392f256bb" name="Default Changelist" comment="" />
-      <created>1595353415251</created>
+      <changelist id="d81b1327-0a00-45ca-a781-d56db10b3f2e" name="Default Changelist" comment="" />
+      <created>1598297916631</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595353415251</updated>
+      <updated>1598297916631</updated>
     </task>
     <servers />
   </component>
@@ -94,49 +91,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="284" y="229" width="1169" height="551" key="#Run_sudoku" timestamp="1595875200941">
+    <state x="560" y="151" width="800" height="706" key="#Plugins" timestamp="1600701586155">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="284" y="229" width="1169" height="551" key="#Run_sudoku/0.0.1920.1040@0.0.1920.1040" timestamp="1595875200941" />
-    <state x="668" y="368" width="400" height="272" key="#Scopes" timestamp="1595875402889">
+    <state x="560" y="151" width="800" height="706" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1600701586155" />
+    <state x="423" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600701692146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="368" width="400" height="272" key="#Scopes/0.0.1920.1040@0.0.1920.1040" timestamp="1595875402889" />
-    <state x="331" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596304867707">
+    <state x="423" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600701692146" />
+    <state width="1545" height="256" key="GridCell.Tab.0.bottom" timestamp="1600701734510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="331" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596304867707" />
-    <state x="748" y="265" width="424" height="479" key="FileChooserDialogImpl" timestamp="1596305323366">
+    <state width="1545" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600701734510" />
+    <state width="1545" height="256" key="GridCell.Tab.0.center" timestamp="1600701734508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="748" y="265" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596305323366" />
-    <state width="1545" height="195" key="GridCell.Tab.0.bottom" timestamp="1596657047580">
+    <state width="1545" height="256" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600701734508" />
+    <state width="1545" height="256" key="GridCell.Tab.0.left" timestamp="1600701734507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1545" height="195" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596657047580" />
-    <state width="1545" height="195" key="GridCell.Tab.0.center" timestamp="1596657047579">
+    <state width="1545" height="256" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600701734507" />
+    <state width="1545" height="256" key="GridCell.Tab.0.right" timestamp="1600701734509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1545" height="195" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596657047579" />
-    <state width="1545" height="195" key="GridCell.Tab.0.left" timestamp="1596657047578">
+    <state width="1545" height="256" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600701734509" />
+    <state x="560" y="243" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1598298237216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1545" height="195" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596657047578" />
-    <state width="1545" height="195" key="GridCell.Tab.0.right" timestamp="1596657047579">
+    <state x="560" y="243" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598298237216" />
+    <state x="522" y="239" width="877" height="529" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600524205156">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1545" height="195" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596657047579" />
-    <state x="456" y="253" width="824" height="503" key="IDE.errors.dialog" timestamp="1597860375882">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="456" y="253" width="824" height="503" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597860375882" />
-    <state x="377" y="142" key="SettingsEditor" timestamp="1596302342877">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="377" y="142" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596302342877" />
-    <state x="522" y="239" width="877" height="530" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596656693051">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="522" y="239" width="877" height="530" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1596656693051" />
+    <state x="522" y="239" width="877" height="529" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1600524205156" />
   </component>
 </project>
