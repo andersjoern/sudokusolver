@@ -123,10 +123,7 @@ fn main() {
             for (idx, field) in work_fields.iter().enumerate() {
                 let c = idx % 9;
                 if idx > 0 && c == 0 { r += 1; }
-                grid[r][c] = match field.value().trim().parse() {
-                    Ok(n) => n,
-                    Err(_) => 0,
-                };
+                grid[r][c] = field.value().trim().parse().unwrap_or(0);
             }
             if solvable(&grid) {
                 solve(&mut grid);
