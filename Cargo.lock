@@ -23,21 +23,23 @@ dependencies = [
 
 [[package]]
 name = "fltk"
-version = "0.13.10"
+version = "0.14.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f0aee4d8df7754c9474625a6380f49766e9ee1bba394d453fb2d988bdae8fe6"
+checksum = "ef138f5db88a864e2d16cf4e724c900692ab35c5ab6ebd16d5f393a744f1a767"
 dependencies = [
  "bitflags",
  "fltk-derive",
  "fltk-sys",
  "lazy_static",
+ "objc",
+ "raw-window-handle",
 ]
 
 [[package]]
 name = "fltk-derive"
-version = "0.13.10"
+version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "92632fdaaf80840d257baffdf2f01914366dc68f8b477ca9f53397bdaeca5760"
+checksum = "5ccb96a08b46d1212fe5175ad8d76df6f9c7a4fa915e0feab0c871e3575b69c2"
 dependencies = [
  "quote",
  "syn",
@@ -45,9 +47,9 @@ dependencies = [
 
 [[package]]
 name = "fltk-sys"
-version = "0.13.9"
+version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e3ccf46565f78ff658f3f078695bba98e09d645f146f81304e00f0062bc038a"
+checksum = "6129c98e0ecc127a982e0e354edf730c93122f7077ed863e7439e8b255d16f44"
 dependencies = [
  "cmake",
  "libc",
@@ -61,9 +63,27 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.83"
+version = "0.2.86"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7eb0c4e9c72ee9d69b767adebc5f4788462a3b45624acd919475c92597bcaf4f"
+checksum = "b7282d924be3275cec7f6756ff4121987bc6481325397dde6ba3e7802b1a8b1c"
+
+[[package]]
+name = "malloc_buf"
+version = "0.0.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb"
+dependencies = [
+ "libc",
+]
+
+[[package]]
+name = "objc"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1"
+dependencies = [
+ "malloc_buf",
+]
 
 [[package]]
 name = "proc-macro2"
@@ -84,8 +104,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "raw-window-handle"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0a441a7a6c80ad6473bd4b74ec1c9a4c951794285bf941c2126f607c72e48211"
+dependencies = [
+ "libc",
+]
+
+[[package]]
 name = "sudokusolver"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "fltk",
 ]
