@@ -80,12 +80,12 @@ fn find_next_cell2fill(grid: &[[i32; 9]; 9]) -> (usize, usize) {
 }
 
 fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
-    let (i, j) = find_next_cell2fill(&grid);
+    let (i, j) = find_next_cell2fill(grid);
     if i == 99 {
         return true;
     }
     for e in 1..10 {
-        if possible(&grid, i, j, e) {
+        if possible(grid, i, j, e) {
             grid[i][j] = e;
             if solve(grid) {
                 return true;
