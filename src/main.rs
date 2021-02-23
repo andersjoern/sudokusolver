@@ -133,14 +133,14 @@ fn main() {
                     let c = idx % 9;
                     if idx > 0 && c == 0 { r += 1; }
                     if grid[r][c] == 0 {
-                        message(100, 100, "Not solvable");        
+                        alert_default("Not solvable");        
                         break
                     };
                     let b = format!("  {}", grid[r][c]);
                     field.set_value(&b);
                 }
             } else {
-                message(100, 100, "Not solvable");
+                alert_default("Not solvable");
             }
         }));
     work_fields = input_fields.clone();
