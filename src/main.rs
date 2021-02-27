@@ -96,6 +96,13 @@ fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
     false
 }
 
+fn is_value_legal(val : &str) -> bool {
+    match val.trim() {
+        ""  | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" => true,
+        _ => false
+    }
+}
+
 #[allow(clippy::redundant_clone)]
 fn main() {
     let positions = vec![10, 40, 70, 104, 134, 164, 198, 228, 258];
@@ -121,6 +128,10 @@ fn main() {
             // Move data from screen to grid
             let mut r = 0;            
             for (idx, field) in work_fields.iter().enumerate() {
+                if is_value_legal(&field.value()) == false {
+                    alert_default(format!("Illegal value: {}", field.value()).as_str());
+                    return;    
+                }
                 let c = idx % 9;
                 if idx > 0 && c == 0 { r += 1; }
                 grid[r][c] = field.value().trim().parse().unwrap_or(0);
