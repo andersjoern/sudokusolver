@@ -97,10 +97,7 @@ fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
 }
 
 fn is_value_legal(val : &str) -> bool {
-    match val.trim() {
-        ""  | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" => true,
-        _ => false
-    }
+    matches!(val.trim(), ""  | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")
 }
 
 #[allow(clippy::redundant_clone)]
@@ -128,7 +125,7 @@ fn main() {
             // Move data from screen to grid
             let mut r = 0;            
             for (idx, field) in work_fields.iter().enumerate() {
-                if is_value_legal(&field.value()) == false {
+                if !is_value_legal(&field.value()) {
                     alert_default(format!("Illegal value: {}", field.value()).as_str());
                     return;    
                 }

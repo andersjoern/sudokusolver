@@ -1,6 +1,6 @@
 [package]
 name = "sudokusolver"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Anders J. Andersen <andersj.andersen@gmail.com>"]
 edition = "2018"
 description = "A Rust application using fltk as gui to solve sudoku pussels"
