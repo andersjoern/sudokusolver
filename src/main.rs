@@ -120,7 +120,7 @@ fn main() {
     wind.end();
     wind.show();
     let mut work_fields = input_fields.clone();
-    button_solve.set_callback(Box::new(move || {
+    button_solve.set_callback(move || {
             let mut grid = [[0; 9]; 9];
             // Move data from screen to grid
             let mut r = 0;            
@@ -150,12 +150,12 @@ fn main() {
             } else {
                 alert_default("Not solvable");
             }
-        }));
+        });
     work_fields = input_fields.clone();
-    button_clear.set_callback(Box::new(move || {
+    button_clear.set_callback(move || {
         for field in work_fields.iter() {
             field.set_value("");
         }
-    }));
+    });
     app.run().unwrap();
 }
