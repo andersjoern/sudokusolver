@@ -121,36 +121,36 @@ fn main() {
     wind.show();
     let mut work_fields = input_fields.clone();
     button_solve.set_callback(move || {
-            let mut grid = [[0; 9]; 9];
-            // Move data from screen to grid
-            let mut r = 0;            
+        let mut grid = [[0; 9]; 9];
+        // Move data from screen to grid
+        let mut r = 0;            
+        for (idx, field) in work_fields.iter().enumerate() {
+            if !is_value_legal(&field.value()) {
+                alert_default(format!("Illegal value: {}", field.value()).as_str());
+                return;    
+            }
+            let c = idx % 9;
+            if idx > 0 && c == 0 { r += 1; }
+            grid[r][c] = field.value().trim().parse().unwrap_or(0);
+        }
+        if solvable(&grid) {
+            solve(&mut grid);
+            // Move data from grid to screen
+            r = 0;
             for (idx, field) in work_fields.iter().enumerate() {
-                if !is_value_legal(&field.value()) {
-                    alert_default(format!("Illegal value: {}", field.value()).as_str());
-                    return;    
-                }
                 let c = idx % 9;
                 if idx > 0 && c == 0 { r += 1; }
-                grid[r][c] = field.value().trim().parse().unwrap_or(0);
+                if grid[r][c] == 0 {
+                    alert_default("Not solvable");        
+                    break
+                };
+                let b = format!("  {}", grid[r][c]);
+                field.set_value(&b);
             }
-            if solvable(&grid) {
-                solve(&mut grid);
-                // Move data from grid to screen
-                r = 0;
-                for (idx, field) in work_fields.iter().enumerate() {
-                    let c = idx % 9;
-                    if idx > 0 && c == 0 { r += 1; }
-                    if grid[r][c] == 0 {
-                        alert_default("Not solvable");        
-                        break
-                    };
-                    let b = format!("  {}", grid[r][c]);
-                    field.set_value(&b);
-                }
-            } else {
-                alert_default("Not solvable");
-            }
-        });
+        } else {
+            alert_default("Not solvable");
+        }
+    });
     work_fields = input_fields.clone();
     button_clear.set_callback(move || {
         for field in work_fields.iter() {
