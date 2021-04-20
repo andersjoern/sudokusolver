@@ -1,5 +1,5 @@
 
-use fltk::{app::*, button::*, window::*, input::*, dialog::*};
+use fltk::{app::*, button::*, window::*, input::*, dialog::*, prelude::*};
 
 fn solvable(grid: &[[i32; 9]; 9]) -> bool {
     let mut items: [i32; 9];
@@ -120,7 +120,7 @@ fn main() {
     wind.end();
     wind.show();
     let mut work_fields = input_fields.clone();
-    button_solve.set_callback(move || {
+    button_solve.set_callback(move |_| {
         let mut grid = [[0; 9]; 9];
         // Move data from screen to grid
         let mut r = 0;            
@@ -152,7 +152,7 @@ fn main() {
         }
     });
     work_fields = input_fields.clone();
-    button_clear.set_callback(move || {
+    button_clear.set_callback(move |_| {
         for field in work_fields.iter() {
             field.set_value("");
         }
