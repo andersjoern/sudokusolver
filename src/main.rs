@@ -137,7 +137,7 @@ fn main() {
             solve(&mut grid);
             // Move data from grid to screen
             r = 0;
-            for (idx, field) in work_fields.iter().enumerate() {
+            for (idx, field) in work_fields.iter_mut().enumerate() {
                 let c = idx % 9;
                 if idx > 0 && c == 0 { r += 1; }
                 if grid[r][c] == 0 {
@@ -153,7 +153,7 @@ fn main() {
     });
     work_fields = input_fields.clone();
     button_clear.set_callback(move |_| {
-        for field in work_fields.iter() {
+        for field in work_fields.iter_mut() {
             field.set_value("");
         }
     });
