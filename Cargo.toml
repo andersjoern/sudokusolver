@@ -1,11 +1,11 @@
 [package]
 name = "sudokusolver"
-version = "0.4.1"
+version = "0.5.0"
 authors = ["Anders J. Andersen <andersj.andersen@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "A Rust application using fltk as gui to solve sudoku pussels"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-fltk = "^1.1"
+fltk = "^1.2"
