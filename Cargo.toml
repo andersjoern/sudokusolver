@@ -9,3 +9,6 @@ description = "A Rust application using fltk as gui to solve sudoku pussels"
 
 [dependencies]
 fltk = "^1.2"
+
+[profile.release]
+strip = "debuginfo"
