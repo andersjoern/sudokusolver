@@ -4,9 +4,9 @@ version = 3
 
 [[package]]
 name = "bitflags"
-version = "2.3.2"
+version = "2.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6dbe3c979c178231552ecba20214a8272df4e09f232a87aef4320cf06539aded"
+checksum = "630be753d4e58660abd17930c71b647fe46c27ea6b63cc59e1e3851406972e42"
 
 [[package]]
 name = "cc"
@@ -50,9 +50,9 @@ dependencies = [
 
 [[package]]
 name = "fltk"
-version = "1.4.5"
+version = "1.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2017a266212c99e36f6a9eff853e9a1c45e07a0fcab3b159bd2fce6f1b910001"
+checksum = "d369b1769872b135d45ea243a5914788bbe36206a900fb9d26464fe7344326dd"
 dependencies = [
  "bitflags",
  "crossbeam-channel",
@@ -63,18 +63,18 @@ dependencies = [
 
 [[package]]
 name = "fltk-sys"
-version = "1.4.5"
+version = "1.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc68abc20638629c01ebe0dad72d44aff3d01e91e222884791804b14484f2a50"
+checksum = "226555c4e079f061ca78802ad8d5d14754d64bf1d4993bc1b867c8c1f95327c5"
 dependencies = [
  "cmake",
 ]
 
 [[package]]
 name = "paste"
-version = "1.0.12"
+version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f746c4065a8fa3fe23974dd82f15431cc8d40779821001404d10d2e79ca7d79"
+checksum = "b4b27ab7be369122c218afc2079489cdcb4b517c0a3fc386ff11e1fedfcc2b35"
 
 [[package]]
 name = "sudokusolver"
@@ -85,6 +85,6 @@ dependencies = [
 
 [[package]]
 name = "ttf-parser"
-version = "0.19.0"
+version = "0.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "44dcf002ae3b32cd25400d6df128c5babec3927cd1eb7ce813cfff20eb6c3746"
+checksum = "a464a4b34948a5f67fddd2b823c62d9d92e44be75058b99939eae6c5b6960b33"
