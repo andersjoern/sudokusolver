@@ -1,5 +1,5 @@
 
-use fltk::{app::*, button::*, window::*, input::*, dialog::*, prelude::*};
+use fltk::{button::*, window::*, input::*, dialog::*, prelude::*};
 
 fn solvable(grid: &[[i32; 9]; 9]) -> bool {
     let mut items: [i32; 9];
@@ -105,7 +105,7 @@ fn main() {
     let positions = vec![10, 40, 70, 104, 134, 164, 198, 228, 258];
     let mut input_fields: Vec<Input> = Vec::new();
 
-    let app = App::default().with_scheme(AppScheme::Gtk);
+    let app = fltk::app::App::default().with_scheme(fltk::app::AppScheme::Gtk);
     let mut wind = Window::default()
         .with_size(300, 380)
         .center_screen()
