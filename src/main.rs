@@ -102,7 +102,7 @@ fn is_value_legal(val : &str) -> bool {
 
 #[allow(clippy::redundant_clone)]
 fn main() {
-    let positions = vec![10, 40, 70, 104, 134, 164, 198, 228, 258];
+    let positions = [10, 40, 70, 104, 134, 164, 198, 228, 258];
     let mut input_fields: Vec<Input> = Vec::new();
 
     let app = fltk::app::App::default().with_scheme(fltk::app::AppScheme::Gtk);
