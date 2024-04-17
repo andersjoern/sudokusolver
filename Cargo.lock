@@ -50,9 +50,9 @@ dependencies = [
 
 [[package]]
 name = "fltk"
-version = "1.4.24"
+version = "1.4.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26cb7f1038a3d80444ebabb2e53f2c403a2953fa8accdc18a90521ce4215ff0d"
+checksum = "c1a1a1f12e65dffb4cc653584d064e7f8ba85b68409b5b83b3132a2c68bad28c"
 dependencies = [
  "bitflags",
  "crossbeam-channel",
@@ -63,9 +63,9 @@ dependencies = [
 
 [[package]]
 name = "fltk-sys"
-version = "1.4.23"
+version = "1.4.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6992c4fcc7b748fbeca0a771ba941cfb09e5edfe5d41df19e421c00cd2aefd1d"
+checksum = "7648b69ab9ac05bd7efe7c5bced6a561aa540d8a969e36baf77a96b0a661d884"
 dependencies = [
  "cmake",
 ]
@@ -78,7 +78,7 @@ checksum = "b4b27ab7be369122c218afc2079489cdcb4b517c0a3fc386ff11e1fedfcc2b35"
 
 [[package]]
 name = "sudokusolver"
-version = "0.5.5"
+version = "0.5.6"
 dependencies = [
  "fltk",
 ]
