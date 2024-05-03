@@ -100,7 +100,6 @@ fn is_value_legal(val : &str) -> bool {
     matches!(val.trim(), ""  | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")
 }
 
-#[allow(clippy::redundant_clone)]
 fn main() {
     let positions = [10, 40, 70, 104, 134, 164, 198, 228, 258];
     let mut input_fields: Vec<Input> = Vec::new();
@@ -151,7 +150,7 @@ fn main() {
             alert_default("Not solvable");
         }
     });
-    work_fields = input_fields.clone();
+    work_fields = input_fields;
     button_clear.set_callback(move |_| {
         for field in work_fields.iter_mut() {
             field.set_value("");
