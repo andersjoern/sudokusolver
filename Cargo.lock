@@ -59,26 +59,35 @@ dependencies = [
 
 [[package]]
 name = "fltk"
-version = "1.5.17"
+version = "1.5.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9bbd413a9508f72cdd5d017ad9ee02a2f82e24354a0e46d82db0cfad2eaa9d13"
+checksum = "797fbbc1b5577e3f218cf6e735f15651adc67182ab4c3cbf3bdf2dea048e608d"
 dependencies = [
  "bitflags",
  "crossbeam-channel",
  "fltk-sys",
+ "minipaste",
  "once_cell",
- "paste",
  "ttf-parser",
 ]
 
 [[package]]
 name = "fltk-sys"
-version = "1.5.15"
+version = "1.5.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4b630a800757b2be016ccdd9e8d80f9c30c97422e21230b18d78b5befecd48fd"
+checksum = "8159438fccdfcf1dcf002e02b24dc7f530ec8616db2ef00513a8b9698bd5bc20"
 dependencies = [
  "cmake",
  "cmk",
+]
+
+[[package]]
+name = "minipaste"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1bbcafc6544efab7decec8e8e63d6e7cbaac0a699a4adead308a80f9c302d6ae"
+dependencies = [
+ "proc-macro2",
 ]
 
 [[package]]
@@ -88,10 +97,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92"
 
 [[package]]
-name = "paste"
-version = "1.0.13"
+name = "proc-macro2"
+version = "1.0.101"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4b27ab7be369122c218afc2079489cdcb4b517c0a3fc386ff11e1fedfcc2b35"
+checksum = "89ae43fd86e4158d6db51ad8e2b80f313af9cc74f5c0e03ccb87de09998732de"
+dependencies = [
+ "unicode-ident",
+]
 
 [[package]]
 name = "shlex"
@@ -101,7 +113,7 @@ checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
 
 [[package]]
 name = "sudokusolver"
-version = "0.5.22"
+version = "0.5.23"
 dependencies = [
  "fltk",
 ]
@@ -111,3 +123,9 @@ name = "ttf-parser"
 version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5902c5d130972a0000f60860bfbf46f7ca3db5391eddfedd1b8728bd9dc96c0e"
+
+[[package]]
+name = "unicode-ident"
+version = "1.0.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "462eeb75aeb73aea900253ce739c8e18a67423fadf006037cd3ff27e82748a06"
