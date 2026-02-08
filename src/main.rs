@@ -1,5 +1,4 @@
-
-use fltk::{button::*, window::*, input::*, dialog::*, prelude::*};
+use fltk::{button::*, dialog::*, input::*, prelude::*, window::*};
 
 fn solvable(grid: &[[i32; 9]; 9]) -> bool {
     let mut items: [i32; 9];
@@ -33,7 +32,7 @@ fn solvable(grid: &[[i32; 9]; 9]) -> bool {
             items = [0; 9];
             for i in 0..3 {
                 for j in 0..3 {
-                    if grid[y + i][x + j] > 0 && grid[y + i][x + j]  < 10 {
+                    if grid[y + i][x + j] > 0 && grid[y + i][x + j] < 10 {
                         items[(grid[y + i][x + j] - 1) as usize] += 1;
                     }
                 }
@@ -50,11 +49,11 @@ fn possible(grid: &[[i32; 9]; 9], y: usize, x: usize, number: i32) -> bool {
     if grid[y].iter().any(|&n| n == number) {
         return false;
     }
-    
-    if grid.iter().any(|n| n[x] == number) {
+
+    if grid.iter().any(|&n| n[x] == number) {
         return false;
     }
-        
+
     let x0: usize = (x / 3) * 3;
     let y0: usize = (y / 3) * 3;
 
@@ -79,7 +78,7 @@ fn find_next_cell2fill(grid: &[[i32; 9]; 9]) -> (usize, usize) {
     (99, 99)
 }
 
-fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
+fn solve(grid: &mut [[i32; 9]; 9]) -> bool {
     let (i, j) = find_next_cell2fill(grid);
     if i == 99 {
         return true;
@@ -96,8 +95,11 @@ fn solve(grid : &mut [[i32; 9]; 9]) -> bool {
     false
 }
 
-fn is_value_legal(val : &str) -> bool {
-    matches!(val.trim(), ""  | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")
+fn is_value_legal(val: &str) -> bool {
+    matches!(
+        val.trim(),
+        "" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+    )
 }
 
 fn main() {
@@ -119,18 +121,20 @@ fn main() {
     wind.end();
     wind.show();
     button_solve.set_callback({
-        let mut work_fields = input_fields.clone();        
+        let mut work_fields = input_fields.clone();
         move |_| {
             let mut grid = [[0; 9]; 9];
             // Move data from screen to grid
-            let mut r = 0;            
+            let mut r = 0;
             for (idx, field) in work_fields.iter().enumerate() {
                 if !is_value_legal(&field.value()) {
                     alert_default(format!("Illegal value: {}", field.value()).as_str());
-                    return;    
+                    return;
                 }
                 let c = idx % 9;
-                if idx > 0 && c == 0 { r += 1; }
+                if idx > 0 && c == 0 {
+                    r += 1;
+                }
                 grid[r][c] = field.value().trim().parse().unwrap_or(0);
             }
             if solvable(&grid) {
@@ -139,10 +143,12 @@ fn main() {
                 r = 0;
                 for (idx, field) in work_fields.iter_mut().enumerate() {
                     let c = idx % 9;
-                    if idx > 0 && c == 0 { r += 1; }
+                    if idx > 0 && c == 0 {
+                        r += 1;
+                    }
                     if grid[r][c] == 0 {
-                        alert_default("Not solvable");        
-                        break
+                        alert_default("Not solvable");
+                        break;
                     };
                     let b = format!("  {}", grid[r][c]);
                     field.set_value(&b);
@@ -152,9 +158,9 @@ fn main() {
             }
         }
     });
-    
+
     button_clear.set_callback({
-        let mut work_fields = input_fields.clone();    
+        let mut work_fields = input_fields.clone();
         move |_| {
             for field in work_fields.iter_mut() {
                 field.set_value("");
