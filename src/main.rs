@@ -46,7 +46,7 @@ fn solvable(grid: &[[i32; 9]; 9]) -> bool {
 }
 
 fn possible(grid: &[[i32; 9]; 9], y: usize, x: usize, number: i32) -> bool {
-    if grid[y].iter().any(|&n| n == number) {
+    if grid[y].contains(&number) {
         return false;
     }
 
