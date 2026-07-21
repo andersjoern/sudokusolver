@@ -138,7 +138,10 @@ fn main() {
                 grid[r][c] = field.value().trim().parse().unwrap_or(0);
             }
             if solvable(&grid) {
-                solve(&mut grid);
+                if !solve(&mut grid) {
+                    alert_default("Not solvable");
+                    return;
+                }
                 // Move data from grid to screen
                 r = 0;
                 for (idx, field) in work_fields.iter_mut().enumerate() {
@@ -146,10 +149,6 @@ fn main() {
                     if idx > 0 && c == 0 {
                         r += 1;
                     }
-                    if grid[r][c] == 0 {
-                        alert_default("Not solvable");
-                        break;
-                    };
                     let b = format!("  {}", grid[r][c]);
                     field.set_value(&b);
                 }
