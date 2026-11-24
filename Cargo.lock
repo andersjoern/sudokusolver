@@ -66,23 +66,22 @@ checksum = "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
 
 [[package]]
 name = "fltk"
-version = "1.5.23"
+version = "1.5.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "78e4a0494d4c6c020514ae1d0b6cc44beddd5f37f0b81bc8e84334652ee15291"
+checksum = "6acfa51a6d98065984e5f6f21fca6d421791b7b8b6a1351d1966c9799d2c7c60"
 dependencies = [
  "bitflags",
  "crossbeam-channel",
  "fltk-sys",
  "minipaste",
  "once_cell",
- "ttf-parser",
 ]
 
 [[package]]
 name = "fltk-sys"
-version = "1.5.23"
+version = "1.5.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d9c99e29458923abe3f07b7f8a3bc5b5de3a2c04ad82273fd96402b3666ed06"
+checksum = "1c4875e000369874f50a6c09abf99f08ff45b867daa340ffe5965122a849c83b"
 dependencies = [
  "cmake",
  "cmk",
@@ -124,12 +123,6 @@ version = "0.6.0"
 dependencies = [
  "fltk",
 ]
-
-[[package]]
-name = "ttf-parser"
-version = "0.25.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5902c5d130972a0000f60860bfbf46f7ca3db5391eddfedd1b8728bd9dc96c0e"
 
 [[package]]
 name = "unicode-ident"
